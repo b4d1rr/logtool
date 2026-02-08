@@ -1,6 +1,4 @@
-###############
-### logtool ###
-###############
+### logtool 
 
 # Cloud Log Filtering CLI Tool
 
