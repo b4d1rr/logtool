@@ -1,43 +1,40 @@
-### logtool 
+# logtool — Cloud Log Reader (Period 1)
 
-# Cloud Log Filtering CLI Tool
+logtool is a simple Python command-line tool that reads raw cloud logs, validates them, counts log levels, and generates a clean text report.
 
-This project is a Python command-line tool that reads cloud-style logs,
-validates them, and filters them by level and/or service.
+This tool was created as part of a cloud engineering assignment focusing on:
+- log parsing  
+- validation  
+- data quality checks  
+- text reporting
 
-## Features
-- Reads logs.txt
-- Filters logs by:
-  - `--level` (INFO, WARN, ERROR)
-  - `--service` (auth, api, db, etc.)
-- Ignores invalid log lines
-- Writes results to an output file
-- Prints summary to the terminal
+---
 
-## Example Commands
+## 📌 Features
+- Reads **logs.txt**
+- Splits each log into 4 fields:
+  - `timestamp | level | service | message`
+- Validates:
+  - Correct number of fields
+  - Level must be: `INFO`, `WARN`, or `ERROR`
+- Counts:
+  - Total lines
+  - Invalid lines
+  - INFO / WARN / ERROR logs
+  - Invalid levels
+- Generates a summary report:
+  - Printed in terminal
+  - Saved as **period1_report.txt**
 
-Filter by level:
+---
 
-##
+## 🚀 How to Run
 
-PL202 — Day 1 Independent Tasks (Grade 11)
+1. Place the following in the same folder:
+   - `starter_period1.py`
+   - `logs.txt`
 
-Files included:
-- logs.txt
-- starter_period1.py
-- starter_period2.py
-- expected_output_example.json
+2. Run the tool:
 
-How to run:
-1) Put all files in ONE folder.
-2) Open Terminal in that folder.
-3) Period 1:
-   python starter_period1.py
-   -> creates period1_report.txt
-4) Period 2:
-   python starter_period2.py
-   -> creates clean_logs.txt and summary.json
-
-Notes:
-- Do not rename logs.txt
-- Outputs should be created in the same folder.
+```bash
+python starter_period1.py
